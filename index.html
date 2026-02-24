@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌟 Pesantren Kilat - Mari Belajar! 🌟</title>
+
+<style>
+/* ===== IMPORT FONT PLAYFUL ===== */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Fredoka+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== FLOATING DECORATIONS ===== */
+.decorations {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.float-item {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.3;
+  animation: float 8s ease-in-out infinite;
+}
+
+.float-item:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.float-item:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; font-size: 2.5rem; }
+.float-item:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 2s; font-size: 2rem; }
+.float-item:nth-child(4) { top: 60%; right: 5%; animation-delay: 1.5s; }
+.float-item:nth-child(5) { bottom: 10%; right: 20%; animation-delay: 2.5s; font-size: 2.5rem; }
+.float-item:nth-child(6) { top: 40%; left: 10%; animation-delay: 0.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(10deg); }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: slideDown 0.8s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header h1 {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(102, 126, 234, 0.1);
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.emoji-header {
+  font-size: 2rem;
+  margin: 10px 0;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* ===== GRID CARDS ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* ===== LINK CARD ===== */
+.link-card {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 25px 20px;
+  border-radius: 25px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: scaleIn 0.6s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animasi stagger untuk setiap card */
+.link-card:nth-child(1) { animation-delay: 0.1s; }
+.link-card:nth-child(2) { animation-delay: 0.2s; }
+.link-card:nth-child(3) { animation-delay: 0.3s; }
+.link-card:nth-child(4) { animation-delay: 0.4s; }
+.link-card:nth-child(5) { animation-delay: 0.5s; }
+.link-card:nth-child(6) { animation-delay: 0.6s; }
+.link-card:nth-child(7) { animation-delay: 0.7s; }
+.link-card:nth-child(8) { animation-delay: 0.8s; }
+.link-card:nth-child(9) { animation-delay: 0.9s; }
+.link-card:nth-child(10) { animation-delay: 1s; }
+
+/* CARD COLORS */
+.link-card.card1 {
+  background: linear-gradient(135deg, #FF6B6B, #FF8E72);
+}
+.link-card.card2 {
+  background: linear-gradient(135deg, #4ECDC4, #44A08D);
+}
+.link-card.card3 {
+  background: linear-gradient(135deg, #FFD93D, #FFA500);
+}
+.link-card.card4 {
+  background: linear-gradient(135deg, #A8E6CF, #56CCF2);
+}
+.link-card.card5 {
+  background: linear-gradient(135deg, #FF8B94, #FF6B9D);
+}
+.link-card.card6 {
+  background: linear-gradient(135deg, #C7CEEA, #B5A7FF);
+}
+.link-card.card7 {
+  background: linear-gradient(135deg, #FFBE75, #FFB088);
+}
+.link-card.card8 {
+  background: linear-gradient(135deg, #74B9FF, #0984E3);
+}
+.link-card.card9 {
+  background: linear-gradient(135deg, #A29BFE, #6C5CE7);
+}
+.link-card.card10 {
+  background: linear-gradient(135deg, #00B894, #55EFC4);
+}
+
+.link-card:hover {
+  transform: translateY(-15px) scale(1.08);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+.link-card:active {
+  transform: scale(0.95);
+}
+
+.card-number {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.link-card strong {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.link-card span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: block;
+}
+
+.card-emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  color: #555;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.8s ease 1.2s both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  .link-card {
+    padding: 20px 15px;
+  }
+  
+  .card-emoji {
+    font-size: 2rem;
+  }
+}
+
+@media(max-width: 480px) {
+  .header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .float-item {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== SPECIAL EFFECTS ===== */
+.sparkle {
+  position: relative;
+}
+
+.link-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 25px;
+  opacity: 0;
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+    left: -100%;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== FLOATING DECORATIONS ===== -->
+<div class="decorations">
+  <div class="float-item">📚</div>
+  <div class="float-item">✨</div>
+  <div class="float-item">🌙</div>
+  <div class="float-item">⭐</div>
+  <div class="float-item">📖</div>
+  <div class="float-item">🎓</div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <div class="emoji-header">🌟 📚 🌟</div>
+    <h1>🎉 Pesantren Kilat 🎉</h1>
+    <p>Mari Belajar Agama Islam dengan Menyenangkan! 🌈</p>
+  </div>
+
+  <!-- ===== CARDS GRID ===== -->
+  <div class="cards-grid">
+    
+    <a href="../materi/puasa.html" class="link-card card1">
+      <div class="card-emoji">⏱️</div>
+      <div class="card-number">Pelajaran 1</div>
+      <strong>Puasa</strong>
+      <span>Makna dan Hikmah Puasa 🌙</span>
+    </a>
+
+    <a href="doa.html" class="link-card card2">
+      <div class="card-emoji">🤲</div>
+      <div class="card-number">Pelajaran 2</div>
+      <strong>Kumpulan Doa</strong>
+      <span>Doa-doa Harian 💝</span>
+    </a>
+
+    <a href="zakat-fitrah.html" class="link-card card3">
+      <div class="card-emoji">💰</div>
+      <div class="card-number">Pelajaran 3</div>
+      <strong>Zakat Fitrah</strong>
+      <span>Berbagi Kebahagiaan 🎁</span>
+    </a>
+
+    <a href="tajwid.html" class="link-card card4">
+      <div class="card-emoji">🎵</div>
+      <div class="card-number">Pelajaran 4</div>
+      <strong>Tajwid</strong>
+      <span>Cara Membaca Al-Quran 📖</span>
+    </a>
+
+    <a href="turunya-alquran.html" class="link-card card5">
+      <div class="card-emoji">📜</div>
+      <div class="card-number">Pelajaran 5</div>
+      <strong>Turunya Al-Quran</strong>
+      <span>Sejarah Kitab Suci 📕</span>
+    </a>
+
+    <a href="etika-media-sosial.html" class="link-card card6">
+      <div class="card-emoji">📱</div>
+      <div class="card-number">Pelajaran 6</div>
+      <strong>Etika Media Sosial</strong>
+      <span>Bermain dengan Bijak 👍</span>
+    </a>
+
+    <a href="niat-puasa.html" class="link-card card7">
+      <div class="card-emoji">💭</div>
+      <div class="card-number">Pelajaran 7</div>
+      <strong>Niat Puasa</strong>
+      <span>Hati yang Ikhlas 🤎</span>
+    </a>
+
+    <a href="lailatul-qodar.html" class="link-card card8">
+      <div class="card-emoji">✨</div>
+      <div class="card-number">Pelajaran 8</div>
+      <strong>Lailatul Qodar</strong>
+      <span>Malam Seribu Bulan 🌌</span>
+    </a>
+
+    <a href="muhammad-rasulullah.html" class="link-card card9">
+      <div class="card-emoji">👨‍🏫</div>
+      <div class="card-number">Pelajaran 9</div>
+      <strong>Nabi Muhammad SAW</strong>
+      <span>Teladan Terbaik 💫</span>
+    </a>
+
+    <a href="orang-tua.html" class="link-card card10">
+      <div class="card-emoji">👨‍👩‍👧</div>
+      <div class="card-number">Pelajaran 10</div>
+      <strong>Berbakti Orang Tua</strong>
+      <span>Surga di Bawah Kakimu 💚</span>
+    </a>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <div style="font-size: 1rem; font-weight: 700; margin-bottom: 10px;">✨ © 2026 Materi Pendidikan Islam ✨</div>
+    <div style="font-size: 0.95rem; margin-bottom: 15px;">Semoga Bermanfaat dan Selamat Belajar! 📚💪</div>
+    <div style="font-size: 0.9rem; opacity: 0.8; border-top: 2px solid rgba(0,0,0,0.1); padding-top: 12px;">
+      Created By : <strong>Gerry Lanang Yufrantono, S.Pd.</strong><br>
+      <span style="color: #667eea; font-weight: 700;">🎓 (Pak Gerry)</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
